@@ -1,0 +1,135 @@
+/* 基本スタイル */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* ヒーローセクション */
+.hero {
+    height: 60vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* メンバー一覧全体のレイアウト：カードを横に並べる */
+.member-grid {
+    display: flex;
+    flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+    gap: 20px;       /* カード同士の隙間 */
+    justify-content: flex-start; /* 左寄せ */
+}
+
+/* カード単体のスタイル：中身を横並びにする */
+.member-card {
+    display: flex;       /* アイコンとテキストを横に並べる */
+    align-items: center; /* 上下中央揃え */
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-width: 300px;    /* カードが小さくなりすぎないように */
+    flex: 1;             /* 利用可能なスペースを分かち合う */
+}
+
+/* アイコンを左に固定 */
+.member-icon {
+    width: 70px;         /* 少しサイズを調整 */
+    height: 70px;
+    margin: 0 20px 0 0;  /* 右側にだけ隙間を作る (上 右 下 左) */
+    flex-shrink: 0;      /* 画像が潰れないように固定 */
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #764ba2;
+}
+
+.member-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* テキスト情報のスタイル */
+.member-info {
+    text-align: left;    /* テキストを左寄せ */
+}
+
+.member-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.member-info p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.discord { background: #5865F2; }
+.youtube { background: #FF0000; }
+.x-twitter { background: #000000; }
+
+/* --- アニメーション設定 --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
